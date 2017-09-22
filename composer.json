@@ -1,0 +1,23 @@
+{
+    "name": "m-shimao/php-zcollection",
+    "description": "PHP collection extension by zephir",
+    "keywords": ["collection", "extention", "php"],
+    "type": "extention",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Masanori Shimao",
+            "email": "masao.0a@gmail.com"
+        }
+    ],
+	"require": {
+		"php": ">=5.4"
+	},
+    "require-dev": {
+        "devster/ubench": "*",
+        "doctrine/collections": "1.5.0",
+        "cakephp/collection": "3.5.2",
+        "illuminate/support": "5.5.2",
+        "ginq/ginq": "0.2.4"
+    }
+}

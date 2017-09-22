@@ -27,4 +27,10 @@ class Zcollection
         let this->it = results;
         return this;
     }
+
+    public function arrayMap(var callback)
+    {
+        let this->it = array_map(callback, this->it);
+        return this;
+    }
 }
