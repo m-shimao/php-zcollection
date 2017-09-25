@@ -33,4 +33,22 @@ class Zcollection
         let this->it = array_map(callback, this->it);
         return this;
     }
+
+    public function calcMap()
+    {
+        array results;
+        var key, value;
+
+        let results = [];
+        for key, value in this->it {
+            let results[key] = intval((value * value * value) / 5) % 12345;
+        }
+        let this->it = results;
+        return this;
+    }
+
+    public static function h(string str)
+    {
+        return htmlspecialchars(str);
+    }
 }

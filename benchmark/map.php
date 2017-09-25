@@ -28,6 +28,8 @@ zcollectionBench($targets, $closure);
 
 zcollectionArrayMapBench($targets, $closure);
 
+zcollectionCalcMapBench($targets, $closure);
+
 
 /*
  * 以下、ベンチマークコード
@@ -118,6 +120,17 @@ function zcollectionArrayMapBench(array $targets, Closure $closure) {
     $bench->start();
 
     $results = (new Zcollection($targets))->arrayMap($closure)->toArray();
+
+    $bench->end();
+    printf("time: %s, peak-memory: %s, memory-in-end: %s\n", $bench->getTime(), $bench->getMemoryPeak(), $bench->getMemoryUsage());
+}
+
+function zcollectionCalcMapBench(array $targets, Closure $closure) {
+    $bench = new Ubench;
+    printf("%s\n", "Zcollection calc map");
+    $bench->start();
+
+    $results = (new Zcollection($targets))->calcMap($closure)->toArray();
 
     $bench->end();
     printf("time: %s, peak-memory: %s, memory-in-end: %s\n", $bench->getTime(), $bench->getMemoryPeak(), $bench->getMemoryUsage());
